@@ -38,14 +38,25 @@ import java.util.HashMap;
  */
 public class LocationFragment extends Fragment implements Response.ErrorListener, Response.Listener<String> {
 
+    private static final String ARG_PARAM_TOWN_NAME = "paramTownName";
     private GoogleMap gMap;
     private String townName;
 
 
+    public static LocationFragment newInstance(String townName){
+        LocationFragment fragment = new LocationFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM_TOWN_NAME,townName);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.townName = "san cristobal de las casas chiapas";
+        if(getArguments()!=null){
+            this.townName = getArguments().getString(ARG_PARAM_TOWN_NAME);
+        }
     }
 
     public LocationFragment() {
