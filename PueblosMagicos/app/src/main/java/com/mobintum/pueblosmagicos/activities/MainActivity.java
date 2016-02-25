@@ -19,18 +19,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(savedInstanceState==null) {
+        //if(savedInstanceState==null) {
             setContentView(R.layout.activity_main);
             fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content, new LocationFragment());
             ft.commit();
-        }else {
+       // }
+        /*}else {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content, fm.findFragmentById(R.id.content));
             ft.commit();
 
-        }
+        }*/
 
     }
 }
