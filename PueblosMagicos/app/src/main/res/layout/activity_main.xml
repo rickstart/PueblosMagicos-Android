@@ -6,4 +6,3 @@
     tools:context=".activities.MainActivity"
     android:id="@+id/content"/>
 
-

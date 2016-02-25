@@ -12,9 +12,11 @@ import com.mobintum.pueblosmagicos.fragments.ListNewsFragment;
 import com.mobintum.pueblosmagicos.fragments.LocationFragment;
 import com.mobintum.pueblosmagicos.fragments.NavigationFragment;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content, new LocationFragment());
             ft.commit();
-       // }
+        //}
         /*}else {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content, fm.findFragmentById(R.id.content));
