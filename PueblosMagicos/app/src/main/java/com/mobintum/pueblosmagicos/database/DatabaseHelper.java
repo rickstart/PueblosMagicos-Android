@@ -119,5 +119,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        if(oldVersion != DATABASE_VERSION){
+            db.execSQL("DROP TABLE IF EXIST MagicTown");
+        }
     }
 }
