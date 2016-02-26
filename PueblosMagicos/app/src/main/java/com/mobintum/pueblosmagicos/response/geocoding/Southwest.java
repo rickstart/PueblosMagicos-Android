@@ -1,12 +1,11 @@
 
-package com.mobintum.pueblosmagicos.responses.geocoding;
-
+package com.mobintum.pueblosmagicos.response.geocoding;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Northeast_ {
+public class Southwest {
 
     @SerializedName("lat")
     @Expose

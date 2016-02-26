@@ -1,5 +1,5 @@
 
-package com.mobintum.pueblosmagicos.responses.geocoding;
+package com.mobintum.pueblosmagicos.response.geocoding;
 
 import java.util.ArrayList;
 import java.util.List;

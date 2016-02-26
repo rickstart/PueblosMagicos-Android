@@ -125,7 +125,7 @@ public class MagicTown {
         towns.add(new MagicTown("Creel"," Chihuahua","http://www.visitmexico.com/work/models/PueblosMagicos30/WebPage/CHI_ntp_Creel/photoEscudo_CHI_ntp_Creel_SCREEL_Impresindible_Barrancadelcobre_Header_950x434.jpg"));
         towns.add(new MagicTown("Cuatro Ciénegas"," Coahuila","https://i.ytimg.com/vi/aJXd23iT5AM/maxresdefault.jpg"));
         towns.add(new MagicTown("Cuetzalan del Progreso"," Puebla","http://www.wikipuebla.poblanerias.com/wp-content/uploads/2012/12/cuetzalanmagico02.jpg"));
-        towns.add(new MagicTown("Cuitzeo"," Michoacán","http://www.pueblosmexico.com.mx/IMG/jpg_photoEscudo_Cuitzeo_SCUITZEO_Home_HEADER_950x434.jpg"));
+        towns.add(new MagicTown("Cuitzeo del Porvenir"," Michoacán","http://www.pueblosmexico.com.mx/IMG/jpg_photoEscudo_Cuitzeo_SCUITZEO_Home_HEADER_950x434.jpg"));
         towns.add(new MagicTown("Dolores Hidalgo"," Guanajuato","http://www.pueblosmexico.com.mx/IMG/arton23406.jpg"));
         towns.add(new MagicTown("El Oro"," México","http://1.bp.blogspot.com/-KL1IYcpoWmE/VliG9H9IZVI/AAAAAAAATZg/IyHf8aZpPgs/s1600/el%2Boro%2Bpueblo%2Bmagico%2Bviaja%2Bbonito.jpg"));
         towns.add(new MagicTown("El Rosario"," Sinaloa","http://www.vmexicoalmaximo.com/sinaloa/img/galleries/el-rosario-g01-p02-catedral-lateral.jpg"));

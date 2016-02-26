@@ -21,13 +21,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.mobintum.pueblosmagicos.R;
 import com.mobintum.pueblosmagicos.application.AppController;
-import com.mobintum.pueblosmagicos.responses.geocoding.GeocodingResponse;
-import com.mobintum.pueblosmagicos.responses.geocoding.Geometry;
-import com.mobintum.pueblosmagicos.responses.geocoding.Location;
-import com.mobintum.pueblosmagicos.responses.geocoding.Result;
+import com.mobintum.pueblosmagicos.response.geocoding.GeocodingResponse;
+import com.mobintum.pueblosmagicos.response.geocoding.Geometry;
+import com.mobintum.pueblosmagicos.response.geocoding.Location;
+import com.mobintum.pueblosmagicos.response.geocoding.Result;
 import java.util.List;
 
 import java.util.Map;
@@ -38,9 +37,13 @@ import java.util.HashMap;
  */
 public class LocationFragment extends Fragment implements Response.ErrorListener, Response.Listener<String> {
 
+    public static final String TAG = "LocationFragment";
     private static final String ARG_PARAM_TOWN_NAME = "paramTownName";
     private GoogleMap gMap;
     private String townName;
+    public static final Double LAT = 22.487182;
+    public static final Double LON = -101.689453;
+
 
 
     public static LocationFragment newInstance(String townName){
@@ -57,6 +60,14 @@ public class LocationFragment extends Fragment implements Response.ErrorListener
         if(getArguments()!=null){
             this.townName = getArguments().getString(ARG_PARAM_TOWN_NAME);
         }
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        LatLng latLng = new LatLng(LAT,LON);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 4);
+        gMap.moveCamera(cameraUpdate);
     }
 
     public LocationFragment() {
@@ -123,11 +134,11 @@ public class LocationFragment extends Fragment implements Response.ErrorListener
         Geometry geometry = result.getGeometry();
         Location location = geometry.getLocation();
         LatLng latLng = new LatLng(location.getLat(),location.getLng());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 13);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 14);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(result.getFormattedAddress());
         gMap.addMarker(markerOptions);
-        gMap.animateCamera(cameraUpdate);
+        gMap.moveCamera(cameraUpdate);
     }
 }

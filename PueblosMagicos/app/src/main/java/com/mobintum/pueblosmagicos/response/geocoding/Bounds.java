@@ -1,25 +1,26 @@
 
-package com.mobintum.pueblosmagicos.responses.geocoding;
+package com.mobintum.pueblosmagicos.response.geocoding;
+
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Viewport {
+public class Bounds {
 
     @SerializedName("northeast")
     @Expose
-    private Northeast_ northeast;
+    private Northeast northeast;
     @SerializedName("southwest")
     @Expose
-    private Southwest_ southwest;
+    private Southwest southwest;
 
     /**
      * 
      * @return
      *     The northeast
      */
-    public Northeast_ getNortheast() {
+    public Northeast getNortheast() {
         return northeast;
     }
 
@@ -28,7 +29,7 @@ public class Viewport {
      * @param northeast
      *     The northeast
      */
-    public void setNortheast(Northeast_ northeast) {
+    public void setNortheast(Northeast northeast) {
         this.northeast = northeast;
     }
 
@@ -37,7 +38,7 @@ public class Viewport {
      * @return
      *     The southwest
      */
-    public Southwest_ getSouthwest() {
+    public Southwest getSouthwest() {
         return southwest;
     }
 
@@ -46,7 +47,7 @@ public class Viewport {
      * @param southwest
      *     The southwest
      */
-    public void setSouthwest(Southwest_ southwest) {
+    public void setSouthwest(Southwest southwest) {
         this.southwest = southwest;
     }
 

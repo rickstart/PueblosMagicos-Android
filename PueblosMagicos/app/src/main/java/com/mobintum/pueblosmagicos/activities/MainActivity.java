@@ -11,12 +11,12 @@ import com.mobintum.pueblosmagicos.fragments.ListMagicTownsFragment;
 import com.mobintum.pueblosmagicos.fragments.ListNewsFragment;
 import com.mobintum.pueblosmagicos.fragments.LocationFragment;
 import com.mobintum.pueblosmagicos.fragments.NavigationFragment;
+import com.mobintum.pueblosmagicos.models.MagicTown;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ListMagicTownsFragment.Callbacks {
 
     private FragmentManager fm;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.content, new LocationFragment());
+            ft.replace(R.id.content, new ImagesTownFragment());
             ft.commit();
         //}
         /*}else {
@@ -35,5 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
         }*/
 
+    }
+
+    @Override
+    public void onTownSelected(MagicTown magicTown) {
+        fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.content, LocationFragment.newInstance(magicTown.getName()+" "+magicTown.getState()));
+        ft.addToBackStack(LocationFragment.TAG);
+        ft.commit();
     }
 }
