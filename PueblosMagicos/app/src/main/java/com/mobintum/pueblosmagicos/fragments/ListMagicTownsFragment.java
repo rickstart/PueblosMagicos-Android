@@ -104,8 +104,8 @@ public class ListMagicTownsFragment extends Fragment implements MagicTownRVAdapt
     public void getLocations(){
         for(int i=0;i<towns.size();i++){
             MagicTown town = towns.get(i);
-            Log.e("DEBUG", " "+town.getName());
-            if(town.getLatitude()==null || town.getLongitude()==null){
+            Log.e("DEBUG", town.getLatitude()+" "+town.getName());
+            if(town.getLatitude()==0.0 || town.getLongitude()==0.0){
                 Log.e("DEBUG", "ENETER ");
                 if(!pDialog.isShowing())
                     pDialog.show();
