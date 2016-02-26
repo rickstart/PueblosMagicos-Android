@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements ListMagicTownsFra
             setContentView(R.layout.activity_main);
             fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.content, new ImagesTownFragment());
+            ft.replace(R.id.content, new ListMagicTownsFragment());
             ft.commit();
         //}
         /*}else {

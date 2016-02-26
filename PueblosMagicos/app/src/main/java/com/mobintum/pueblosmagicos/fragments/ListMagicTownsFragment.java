@@ -46,7 +46,7 @@ public class ListMagicTownsFragment extends Fragment implements MagicTownRVAdapt
     private RecyclerView rvMagicTowns;
     private MagicTownRVAdapter adapter;
     private Callbacks callback;
-    private ProgressDialog pDialog = new ProgressDialog(getContext());
+    private ProgressDialog pDialog;
     private List<MagicTown> towns = MagicTown.getMagicTowns();
     private int lastUpdate;
 
@@ -68,7 +68,9 @@ public class ListMagicTownsFragment extends Fragment implements MagicTownRVAdapt
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pDialog = new ProgressDialog(getActivity());
         getLocations();
+
     }
 
     @Override
@@ -102,7 +104,9 @@ public class ListMagicTownsFragment extends Fragment implements MagicTownRVAdapt
     public void getLocations(){
         for(int i=0;i<towns.size();i++){
             MagicTown town = towns.get(i);
+            Log.e("DEBUG", " "+town.getName());
             if(town.getLatitude()==null || town.getLongitude()==null){
+                Log.e("DEBUG", "ENETER ");
                 if(!pDialog.isShowing())
                     pDialog.show();
                 getLocation(town,i);

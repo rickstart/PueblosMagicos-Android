@@ -140,7 +140,7 @@ public class MagicTown {
 
     public static List<MagicTown> getMagicTowns(){
         List<MagicTown> objects = new ArrayList<>();
-        Cursor cursor = DatabaseAdapter.getDB().query(TABLE_NAME,null,null,null,null,null,NAME);
+        Cursor cursor = DatabaseAdapter.getDB().query(TABLE_NAME,null,null,null,null,null,null);
         for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext()){
             int idMagicTown = cursor.getInt(cursor.getColumnIndexOrThrow(ID_MAGIC_TOWN));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(NAME));

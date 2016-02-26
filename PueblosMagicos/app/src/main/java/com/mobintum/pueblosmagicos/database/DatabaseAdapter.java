@@ -1,6 +1,11 @@
 package com.mobintum.pueblosmagicos.database;
 
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import java.util.ArrayList;
 
 import com.mobintum.pueblosmagicos.application.AppController;
 
@@ -9,30 +14,33 @@ import com.mobintum.pueblosmagicos.application.AppController;
  */
 public class DatabaseAdapter {
 
-    private static DatabaseHelper dBHelper;
-    private static SQLiteDatabase db;
+    private static DatabaseHelper mDbHelper;
+    private static SQLiteDatabase mDb;
 
     public static boolean openDB(){
-        if(dBHelper != null)
-            dBHelper.close();
-        dBHelper = new DatabaseHelper(AppController.getInstance().getApplicationContext());
+        if(mDbHelper != null)
+            mDbHelper.close();
+        mDbHelper = new DatabaseHelper(AppController.getInstance().getApplicationContext());
 
         try {
-            db = dBHelper.getWritableDatabase();
+            mDb = mDbHelper.getWritableDatabase();
             return true;
         }catch (Exception e){
             e.printStackTrace();
             return false;
         }
-
     }
 
-    public static  SQLiteDatabase getDB(){
-        if(db!=null)
+    public static SQLiteDatabase getDB(){
+
+        if(mDb == null)
             openDB();
 
-        return db;
+        return mDb;
+
     }
 
-
 }
+
+
+
